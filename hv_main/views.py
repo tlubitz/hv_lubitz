@@ -5,3 +5,11 @@ from hv_main.models import HvModel
 def index(request):
     
     return render(request, 'index.html')
+
+def offers(request):
+    
+    return render(request, 'offers.html')
+
+def impressum(request):
+    
+    return render(request, 'impressum.html')
