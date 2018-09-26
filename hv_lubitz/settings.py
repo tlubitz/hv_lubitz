@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'hv_main.apps.Hv_mainConfig'
+    'hv_main.apps.HvMainConfig',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +55,9 @@ ROOT_URLCONF = 'hv_lubitz.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
