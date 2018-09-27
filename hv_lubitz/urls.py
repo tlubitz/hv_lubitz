@@ -23,5 +23,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hv_main/', include('hv_main.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('', RedirectView.as_view(url='/hv_main/')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
