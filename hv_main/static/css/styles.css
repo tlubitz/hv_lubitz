@@ -6,3 +6,34 @@
     font-size: 13pt!important;
     padding:20pt!important;
 }
+
+/* to not fuck up given names, we use common names but
+   precede them with a 'c' (custom) */
+
+.c_main {
+    margin-top:50px;
+}
+
+h1 {
+    text-align:center;
+    font-size: 30pt;
+}
+
+.subline {
+    text-align: center;
+    font-size: 20pt;
+    font-style: italic;
+}
+
+p {
+    font-size: 14pt;
+}
+
+.tube_row {
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+.bg1 {
+    background-color: lightgrey;
+}
