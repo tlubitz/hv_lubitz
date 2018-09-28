@@ -1,0 +1,6 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <p>Ausgeloggt!</p>  
+  <a href="{% url 'login'%}">Hier klicken zum erneuten Login.</a>
+{% endblock %}
