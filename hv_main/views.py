@@ -11,9 +11,9 @@ def offers(request):
     
     return render(request, 'offers.html')
 
-def impressum(request):
+def contact(request):
     
-    return render(request, 'impressum.html')
+    return render(request, 'contact.html')
 
 @login_required
 def cloud(request):
@@ -24,3 +24,7 @@ def cloud(request):
 def calendar(request):
     
     return render(request, 'calendar.html')
+
+def impressum(request):
+    
+    return render(request, 'impressum.html')
