@@ -1,0 +1,1 @@
+web: gunicorn hv_lubitz.wsgi --log-file -
