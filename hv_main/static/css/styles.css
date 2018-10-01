@@ -27,13 +27,21 @@ h1 {
 
 p {
     font-size: 14pt;
+    margin: 20px 20px 20px 20px;
 }
 
 .tube_row {
     margin-top:50px;
     margin-bottom:50px;
+    padding-top:50px;
+    padding-bottom:50px;
 }
 
 .bg1 {
     background-color: lightgrey;
+}
+
+img {
+    width:100%;
+    margin: 20px 20px 20px 20px;
 }

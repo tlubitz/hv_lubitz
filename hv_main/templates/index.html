@@ -1,4 +1,5 @@
 {% extends "base_generic.html" %}
+{% load static %}
 
 {% block content %}
 
@@ -6,7 +7,7 @@
   <div class="col-sm-2"></div>
   <div class="col-sm-8">
     <h1>Hausverwaltung Lubitz</h1>
-    <p class="subline">Welcome, peasants!</p>
+    <p class="subline">Herzlich Willkommen!</p>
   </div>
   <div class="col-sm-2"></div>
 </div> 
@@ -14,10 +15,13 @@
 <div class="row tube_row bg1">
   <div class="col-sm-2"></div>
   <div class="col-sm-4">
-    <p>Picture</p>
+    <img src="{% static 'hv_main/images/placeholder_front.jpg' %}" alt="Kleine Mittelstrasse Front"/>
   </div>
   <div class="col-sm-4">
-    <p>Intro text</p>
+    <p>
+      Die Hausverwaltung Lubitz befindet sich mitten im Herzen Spandaus. Wir verwalten Häuser in
+      Spandau, dem Wedding, Potsdam und Winsen an der Aller.
+    </p>
   </div>
   <div class="col-sm-2"></div>
 </div> 
