@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY ='kbf5q6eaeMgEJyK4fkNLmNnHh38xh38MK4hSJwa9c4veMYwvre'
-# SECRET_KEY = os.environ['SECRET_KEY']
+#SECRET_KEY ='kbf5q6eaeMgEJyK4fkNLmNnHh38xh38MK4hSJwa9c4veMYwvre'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
 #DEBUG = True
-DEBUG = True
 
 ALLOWED_HOSTS = ['fierce-thicket-13876.herokuapp.com','127.0.0.1']
 
@@ -139,9 +139,9 @@ DATABASES['default'].update(db_from_env)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

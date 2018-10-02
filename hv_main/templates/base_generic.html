@@ -4,6 +4,8 @@
   {% block title %}<title>Hausverwaltung Lubitz</title>{% endblock %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <!-- Add additional CSS in static file -->
   {% load static %}
@@ -12,64 +14,75 @@
 </head>
 
 <body>
-
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary navbar-right">
-    <a class="navbar-brand" href="index">HV Lubitz</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav mr-auto">
-	<li class="nav-item active">
-          <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
-	</li>
-	<li class="nav-item">
-          <a class="nav-link" href="offers">Aktuelle Angebote</a>
-	</li>
-	<li class="nav-item">
-          <a class="nav-link" href="contact">Kontakt</a>
-	</li>
-	{% if user.is_authenticated %}
-	<li class="nav-item">
-          <a class="nav-link" href="calendar">Kalender</a>
-	</li>
-	<li class="nav-item">
-          <a class="nav-link" href="cloud">Cloud</a>
-	</li>
-	<li class="nav-item">
-          <a class="nav-link" href="impressum">Impressum</a>
-	</li>
-	<li>
-	  <a class="nav-link" style="color:orange" href="{% url 'logout' %}?next={{..}}">Logout {{ user.get_username }}</a>
-	</li>
-	{% else %}
-	<li class="nav-item">
-          <a class="nav-link" href="impressum">Impressum</a>
-	</li>
-	<li>
-	  <a class="nav-link" style="color:orange" href="{% url 'login' %}?next={{request.path}}">Login</a>
-	</li>
-	{% endif %}
-
-      </ul>
+  <div id="container">
+    <div id="header">
+      <!-- NAVBAR -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary navbar-right">
+	<a class="navbar-brand" href="index">HV Lubitz</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+	  <span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse" id="navbarColor01">
+	  <ul class="navbar-nav mr-auto">
+	    <li class="nav-item active">
+              <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
+	    </li>
+	    <li class="nav-item">
+              <a class="nav-link" href="offers">Aktuelle Angebote</a>
+	    </li>
+	    <li class="nav-item">
+              <a class="nav-link" href="contact">Kontakt</a>
+	    </li>
+	    {% if user.is_authenticated %}
+	    <li class="nav-item">
+              <a class="nav-link" href="calendar">Kalender</a>
+	    </li>
+	    <li class="nav-item">
+              <a class="nav-link" href="cloud">Cloud</a>
+	    </li>
+	    <li class="nav-item">
+              <a class="nav-link" href="impressum">Impressum</a>
+	    </li>
+	    <li>
+	      <a class="nav-link" style="color:orange" href="{% url 'logout' %}?next={{..}}">Logout {{ user.get_username }}</a>
+	    </li>
+	    {% else %}
+	    <li class="nav-item">
+              <a class="nav-link" href="impressum">Impressum</a>
+	    </li>
+	    <li>
+	      <a class="nav-link" style="color:orange" href="{% url 'login' %}?next={{request.path}}">Login</a>
+	    </li>
+	    {% endif %}
+	  </ul>
+	</div>
+      </nav>
     </div>
-  </nav>
 
-  <main>
-    <div class="container-fluid">
-      <div class="row">
-	<div class="col-sm-12">
-	  {% block content %}
-	  {% endblock %}
+    <main>
+      <div class="container-fluid" id="body">
+	<div class="row">
+	  <div class="col-sm-12">
+	    {% block content %}
+	    {% endblock %}
+	  </div>
 	</div>
       </div>
-    </div>
-  </main>
+    </main>
   
-  <footer>
-  </footer>
-  
+    <footer>
+      <div class="container-fluid bg2" id="footer">
+	<div class="row">
+	  <div class="col-sm-1"></div>
+	  <div class="col-sm-10">
+	    Copyright Timo Lubitz Web and Software Development 2018
+	  </div>
+	  <div class="col-sm-1"></div>
+	</div>
+      </div>
+    </footer>
+  </div>
+
 </body>
 </html>
