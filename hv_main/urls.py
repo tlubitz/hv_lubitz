@@ -9,5 +9,4 @@ urlpatterns = [
     path('calendar', views.calendar, name='calendar'),
     path('contact', views.contact, name='contact'),
     path('impressum', views.impressum, name='impressum'),
-
 ]

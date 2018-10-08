@@ -6,7 +6,14 @@
   <div class="col-sm-2"></div>
   <div class="col-sm-8">
     <h1>Hausverwaltung Cloud</h1>
-    <p class="subline">Hier kommt eine schöne Cloud-Anwendung hin!</p>
+    <p class="subline">Speichert Eure Daten in der Wolke!</p>
+
+    <form action="" method="post">
+      {% csrf_token %}
+      {{ form.as_table }}
+      <input type="submit" value="Submit">
+    </form>
+    
   </div>
   <div class="col-sm-2"></div>
 </div> 
