@@ -27,6 +27,130 @@
   <div class="col-sm-2"></div>
 </div> 
 
+
+<div class="row tube_row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <p>Wir stehen für</p>
+    <ul>
+      <li>langfristige Werterhaltung und Wertsteigerung</li>
+      <li>sinnvolle Investitionen</li>
+      <li>dadurch gute Vermietbarkeit</li>
+      <li>gute Erreichbarkeit für Mieter und Eigentümer</li>
+      <li>transparente Kommunikation und schnelle Reaktionszeit</li>
+    </ul>
+  </div>
+  <div class="col-sm-2"></div>
+</div>
+
+<div class="row tube_row bg1">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <div class="gallery_teaser">
+      <img src="{% static 'hv_main/images/lpzg_03.jpg' %}" onclick="openModal();currentSlide(1)" class="hover-shadow" alt="gallery teaser hausfront">
+      <figcaption>
+	<strong class="rubrique">UNSERE OBJEKTE</strong>
+	<h4>Klicken Sie sich durch unsere Gallerie</h4>
+      </figcaption>
+    </div>
+
+    <div id="myModal" class="modal">
+      <span class="close cursor" onclick="closeModal()">&times;</span>
+      <div class="modal-content">
+
+	<div class="mySlides">
+	  <div class="numbertext">1 / 15</div>
+	  <img src="{% static 'hv_main/images/lpzg_03.jpg' %}" alt="hausverwaltung objekte">
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">2 / 15</div>
+	  <img src="{% static 'hv_main/images/fehr_01.JPG' %}" alt="hausverwaltung objekte">
+	</div>
+	
+	<div class="mySlides">
+	  <div class="numbertext">3 / 15</div>
+	  <img src="{% static 'hv_main/images/gth_01.JPG' %}" alt="hausverwaltung objekte">
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">4 / 15</div>
+	  <img src="{% static 'hv_main/images/gth_02.JPG' %}" alt="hausverwaltung objekte">
+	</div>
+	
+	<div class="mySlides">
+	  <div class="numbertext">5 / 15</div>
+	  <img src="{% static 'hv_main/images/gth_03.JPG' %}" alt="hausverwaltung objekte">
+	</div>	
+
+	<div class="mySlides">
+	  <div class="numbertext">6 / 15</div>
+	  <img src="{% static 'hv_main/images/lpzg_01.JPG' %}" alt="hausverwaltung objekte">
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">7 / 15</div>
+	  <img src="{% static 'hv_main/images/lpzg_02.JPG' %}" alt="hausverwaltung objekte">
+	</div>
+
+	<!--
+	<div class="mySlides">
+	  <div class="numbertext">8 / 15</div>
+	  <img src="{% static 'hv_main/images/lpzg_04.pdf' %}" alt="hausverwaltung objekte">
+	</div>
+	-->
+	
+	<div class="mySlides">
+	  <div class="numbertext">9 / 15</div>
+	  <img src="{% static 'hv_main/images/ptsdm_01.JPG' %}" alt="hausverwaltung objekte">
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">10 / 15</div>
+	  <img src="{% static 'hv_main/images/ptsdm_02.JPG' %}" alt="hausverwaltung objekte">
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">11 / 15</div>
+	  <img src="{% static 'hv_main/images/ptsdm_03.JPG' %}" alt="hausverwaltung objekte">
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">12 / 15</div>
+	  <img src="{% static 'hv_main/images/spnd_01.JPG' %}" alt="hausverwaltung objekte">
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">13 / 15</div>
+	  <img src="{% static 'hv_main/images/spnd_02.JPG' %}" alt="hausverwaltung objekte">
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">14 / 15</div>
+	  <img src="{% static 'hv_main/images/spnd_03.JPG' %}" alt="hausverwaltung objekte">
+	</div>
+
+	<div class="mySlides">
+	  <div class="numbertext">15 / 15</div>
+	  <img src="{% static 'hv_main/images/spnd_04.JPG' %}" alt="hausverwaltung objekte">
+	</div>
+	      
+	<!-- Next/previous controls -->
+	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	      
+	<!-- Caption text -->
+	<div class="caption-container">
+	  <p id="caption"></p>
+	</div>
+	
+      </div>
+    </div>
+	
+  </div>
+  <div class="col-sm-2"></div>
+</div>
+
 <div class="row tube_row">
   <div class="col-sm-2"></div>
   <div class="col-sm-8">
@@ -61,19 +185,7 @@
   <div class="col-sm-2"></div>
 </div>
 
-<div class="row tube_row bg1">
-  <div class="col-sm-2"></div>
-  <div class="col-sm-8">
-    <p>Wir stehen für</p>
-    <ul>
-      <li>langfristige Werterhaltung und Wertsteigerung</li>
-      <li>sinnvolle Investitionen</li>
-      <li>dadurch gute Vermietbarkeit</li>
-      <li>gute Erreichbarkeit für Mieter und Eigentümer</li>
-      <li>transparente Kommunikation und schnelle Reaktionszeit</li>
-    </ul>
-  </div>
-  <div class="col-sm-2"></div>
-</div> 
+
+<script src="{% static 'js/scripts_index.js' %}"></script>
 
 {% endblock %}
