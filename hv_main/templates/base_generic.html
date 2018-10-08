@@ -4,13 +4,14 @@
   {% block title %}<title>Hausverwaltung Lubitz</title>{% endblock %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  {% load static %}
+  <link rel="shortcut icon" href="{% static 'hv_main/images/icon.png' %}">
+    
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet">
   
   <!-- Add additional CSS in static files -->
-  {% load static %}
   <link rel="stylesheet" href="{% static 'css/sandstone_bootstrap.css' %}">
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
@@ -30,9 +31,11 @@
 	    <li class="nav-item active">
               <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
 	    </li>
+	    <!--
 	    <li class="nav-item">
               <a class="nav-link" href="offers">Aktuelle Angebote</a>
 	    </li>
+	    -->
 	    <li class="nav-item">
               <a class="nav-link" href="contact">Kontakt</a>
 	    </li>

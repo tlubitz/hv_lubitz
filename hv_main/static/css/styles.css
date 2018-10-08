@@ -21,6 +21,7 @@ body {
 h1 {
     text-align:center;
     font-size: 30pt;
+    margin-bottom: 30px;
 }
 
 .subline {
@@ -227,6 +228,45 @@ img.hover-shadow {
   transition: 0.3s;
 }
 
-
-
 /* Image gallery used as lightbox (modal) END */
+
+.immo_iframe {
+    text-align:center;
+}
+
+.stand_for {
+    font-weight:bold;
+    border:solid;
+    border-color:lightgrey;
+    border-width:1px;
+    padding:10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height:50%;
+    text-align:center;
+}
+
+.stand_for_small {
+    font-weight:bold;
+    border:solid;
+    border-color:lightgrey;
+    border-width:1px;
+    padding:10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height:14%;
+    text-align:center;
+    hyphens:  manual;
+}
+
+.bullet-point {
+    width:10%;
+    height:20%;
+    display:block;
+    margin:auto;
+    margin-top:20px;
+}
+
+.row {
+    margin-bottom: 30px;
+}
