@@ -24,24 +24,26 @@ def cloud(request):
     
     # if this is a POST request then process the Form data
     if request.method == 'POST':
-        save_data_form = SaveDataForm(request.POST)
+        form = SaveDataForm(request.POST, request.FILES)
 
-        if save_data_form.is_valid():
-            d = save_data_form.cleaned_data['save_data']
+        if form.is_valid():
+            form.save()
+            
+            #d = save_data_form.cleaned_data['save_data']
             
             #do what boto tells us to do?
 
+            #return HttpResponseRedirect('/success/url/')
             return HttpResponseRedirect('cloud')
+            
 
     # if the view is called for the first time, we have
-    # to initialise it empty
+    # to initialise it empty(ly)
     else:
-        save_data_form = SaveDataForm(initial={'save_data': ''})
-        
+        #form = SaveDataForm(initial={'save_data': ''})
+        form = SaveDataForm()        
 
-    context = {
-        'form': save_data_form
-        }
+    context = {'form': form}
     
     return render(request, 'cloud.html', context)
 

@@ -8,10 +8,12 @@
     <h1>Hausverwaltung Cloud</h1>
     <p class="subline">Speichert Eure Daten in der Wolke!</p>
 
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {{ form.as_table }}
-      <input type="submit" value="Submit">
+      <input type="text" name="Browse">
+      <input type="file" value="Browse">
+      <input type="submit" value="Upload">
     </form>
     
   </div>
