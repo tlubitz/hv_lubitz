@@ -1,5 +1,6 @@
 import datetime
 from django import forms
+from hv_main.models import HvModel
 
 class SaveDataForm(forms.Form):
     '''
@@ -9,24 +10,31 @@ class SaveDataForm(forms.Form):
         '''
         are there any validation checks for the uploaded file?
         '''
-        # this could be a Field for example:
-        # date = forms.DateField(help_text='Hilf mir.')
-
-        # for text:
-        f_title = forms.CharField(max_length=50)
-        
-        # could be even better:
         f = forms.FileField()
+        file_name = forms.CharField(max_length=50, required="False", initial="Dateiname eingeben", help_text="Bitte einen Namen für die Datei eingeben, ansonsten wird der originale Dateiname verwendet.")
 
-        print('SOMETHING')
-        print(f_title)
-        print(f)
+        print('in forms')
+        print(file_name)
+        print(self.cleaned_data)
+        #pp = self.cleaned_data['file_name']
+        #print(pp)
         
-        #data_file = self.cleaned_data['data_file']
-
-        # clean
+        # create database (cloud) record
+        new_data_record = HvModel(f, file_name)
+        new_data_record.save()
+        
 
         return f
 
-    
+    def clean_file_name(self):
+        '''
+        validates the content of the file_name
+        '''
+        file_name = self.cleaned_data['file_name']
+
+        # clean
+        # if file_name is crappy: raise ValidationError(_('This is crappy!'))
+        
+        return file_name
+
         

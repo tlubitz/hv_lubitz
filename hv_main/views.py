@@ -21,6 +21,8 @@ def contact(request):
 
 @login_required
 def cloud(request):
+
+    db = False
     
     # if this is a POST request then process the Form data
     if request.method == 'POST':
@@ -41,9 +43,9 @@ def cloud(request):
     # to initialise it empty(ly)
     else:
         #form = SaveDataForm(initial={'save_data': ''})
-        form = SaveDataForm()        
+        form = SaveDataForm(initial='Dateiname eingeben')
 
-    context = {'form': form}
+    context = {'form': form, 'database': db}
     
     return render(request, 'cloud.html', context)
 
