@@ -6,7 +6,7 @@ from hv_main.models import DataModel
 class DataModelForm(ModelForm):
     class Meta:
         model = DataModel
-        fields = ['title', 'text', 'notes']
+        fields = ['title', 'notes', 'f']
 
     def boost_botho():
         print('boost')
