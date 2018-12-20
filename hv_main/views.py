@@ -1,9 +1,8 @@
-from django.shortcuts import render
-from hv_main.models import HvModel
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from hv_main.forms import DataModelForm
+from django.utils import timezone
 
-from hv_main.forms import SaveDataForm
-from django.http import HttpResponseRedirect
 
 
 # Create your views here.
@@ -22,32 +21,19 @@ def contact(request):
 @login_required
 def cloud(request):
 
-    db = False
-    
-    # if this is a POST request then process the Form data
     if request.method == 'POST':
-        form = SaveDataForm(request.POST, request.FILES)
-
+        form = DataModelForm(request.POST)
         if form.is_valid():
-            form.save()
+            model_instance = form.save(commit=False)
+            model_instance.timestamp = timezone.now()
+            model_instance.save()
+            model_instance.botho()
             
-            #d = save_data_form.cleaned_data['save_data']
-            
-            #do what boto tells us to do?
-
-            #return HttpResponseRedirect('/success/url/')
-            return HttpResponseRedirect('cloud')
-            
-
-    # if the view is called for the first time, we have
-    # to initialise it empty(ly)
+            return redirect('cloud')
     else:
-        #form = SaveDataForm(initial={'save_data': ''})
-        form = SaveDataForm(initial='Dateiname eingeben')
-
-    context = {'form': form, 'database': db}
+        form = DataModelForm()
+        return render(request, "cloud.html", {'form':form})
     
-    return render(request, 'cloud.html', context)
 
 @login_required
 def calendar(request):

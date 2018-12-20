@@ -1,15 +1,20 @@
-import datetime
-from django import forms
-from hv_main.models import HvModel
+#from django import forms
+#from hv_main.models import HvModel
+from django.forms import ModelForm
+from hv_main.models import DataModel
 
+class DataModelForm(ModelForm):
+    class Meta:
+        model = DataModel
+        fields = ['title', 'text', 'notes']
+
+    def boost_botho():
+        print('boost')
+
+'''
 class SaveDataForm(forms.Form):
-    '''
-    a class that takes care of saving data from a form to AWS
-    '''
+
     def save(self):
-        '''
-        are there any validation checks for the uploaded file?
-        '''
         f = forms.FileField()
         file_name = forms.CharField(max_length=50, required="False", initial="Dateiname eingeben", help_text="Bitte einen Namen für die Datei eingeben, ansonsten wird der originale Dateiname verwendet.")
 
@@ -27,14 +32,12 @@ class SaveDataForm(forms.Form):
         return f
 
     def clean_file_name(self):
-        '''
-        validates the content of the file_name
-        '''
+
         file_name = self.cleaned_data['file_name']
 
         # clean
         # if file_name is crappy: raise ValidationError(_('This is crappy!'))
         
         return file_name
-
+'''
         

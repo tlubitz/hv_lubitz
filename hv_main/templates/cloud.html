@@ -9,12 +9,10 @@
     <p class="subline">Speichert Eure Daten in der Wolke!</p>
 
     <div style="text-align:center;margin-top:50px;">
-    <form action="" method="post" enctype="multipart/form-data">
+    <form method="post">
       {% csrf_token %}
-      {{ form.as_table }}
-      <input type="text">
-      <input type="file" value="Browse">
-      <input type="submit" value="Upload">
+      {{ form }}
+      <button type="submit" class="btn btn-default">Submit</button>
     </form>
     </div>
     
