@@ -15,3 +15,4 @@ class DataModel(models.Model):
     def botho(self):
         print('do botho stuff')
         print(self.title)
+        print(self.f)

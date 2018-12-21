@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from hv_main.forms import DataModelForm
 from django.utils import timezone
 
+from django.http import HttpResponseRedirect
 
 
 # Create your views here.
@@ -26,13 +27,17 @@ def cloud(request):
         if form.is_valid():
             model_instance = form.save(commit=False)
             model_instance.timestamp = timezone.now()
-            model_instance.save()
             model_instance.botho()
+            model_instance.save()
+
             
-            return redirect('cloud')
+            #return redirect('cloud')
+            #return render(request, "cloud.html", {'form':form})
+            return HttpResponseRedirect('cloud')
+            
     else:
         form = DataModelForm()
-        return render(request, "cloud.html", {'form':form})
+    return render(request, "cloud.html", {'form':form})
     
 
 @login_required
